@@ -1,0 +1,129 @@
+#:kivy 2.1.0
+
+
+<Wescreen>:
+    MDFloatLayout:
+        md_bg_color:  [.8,.8,.8,1]
+
+        Carousel:
+            id: carousel
+            on_current_slide: root.current_slide(self.index)
+            MDFloatLayout:
+                Image:
+                    source:"Assets/Images/lemon.png"
+                    pos_hint: {'center_x': .5,'center_y': .7}
+                    size_hint: .5, .5
+
+                MDLabel:
+                    text: "Lemon"
+                    pos_hint: {"center_y": .50}
+                    halign: "center"
+                    font_size: "14sp"
+                    color: rgba(95,88,117,255)
+
+                MDLabel:
+                    text: "The juice is your favorite"
+                    pos_hint: {'center_x': .5,'center_y': .47}
+                    size_hint_x: .95
+                    halign: "center"
+                    font_size: "14sp"
+                    color: rgba(95,88,117,255)
+
+                MDTextButton:
+                    text:"Skip"
+                    pos_hint: {'center_x': 0.88,'center_y': 0.95}
+                    font_size: "13sp"
+                    color: rgba(95,88,117,255)
+                    on_release:
+                        root.next()
+
+            
+            MDFloatLayout:
+                Image:
+                    source:"Assets/Images/cherries.png"
+                    pos_hint: {'center_x': .5,'center_y': .7}
+                    size_hint: .5, .5
+                MDLabel:
+                    text: "Cherries"
+                    pos_hint: {"center_y": .50}
+                    halign: "center"
+                    font_size: "14sp"
+                    color: rgba(95,88,117,255)
+
+                MDLabel:
+                    text: "Sweet fruit for your dessert"
+                    pos_hint: {'center_x': .5,'center_y': .47}
+                    size_hint_x: .95
+                    halign: "center"
+                    font_size: "14sp"
+                    color: rgba(95,88,117,255)
+
+                MDTextButton:
+                    text:"Skip"
+                    pos_hint: {'center_x': 0.88,'center_y': 0.95}
+                    font_size: "13sp"
+                    color: rgba(95,88,117,255)
+                    on_release:
+                        root.next()
+                
+
+            MDFloatLayout:
+                Image:
+                    source:"Assets/Images/raspberry.png"
+                    pos_hint: {'center_x': .5,'center_y': .7}
+                    size_hint: .5, .5
+
+                MDLabel:
+                    text: "Raspberry"
+                    pos_hint: {"center_y": .50}
+                    halign: "center"
+                    font_size: "14sp"
+                    color: rgba(95,88,117,255)
+
+                MDLabel:
+                    text: "Great for your snack"
+                    pos_hint: {'center_x': .5,'center_y': .47}
+                    size_hint_x: .95
+                    halign: "center"
+                    font_size: "14sp"
+                    color: rgba(95,88,117,255)
+
+                Button:
+                    text: "Get Started"
+                    background_color: 0,0,0,0
+                    font_size: "13sp"
+                    size_hint: .9, .075
+                    pos_hint: {'center_x': .5,'center_y': .06}
+                    canvas.before:
+                        Color:
+                            rgb: rgba(95,88,117,255)
+                        RoundedRectangle:
+                            size: self.size
+                            pos: self.pos
+                            radius:[15]
+
+    MDLabel:
+        id: slide0
+        text:"."
+        color: rgba(253,140,95,255)
+        pos_hint: {'center_x': .95,'center_y': .22}
+        font_size:"80sp"
+    
+    MDLabel:
+        id: slide1
+        text:"."
+        color: rgba(233,237,240,255)
+        pos_hint: {'center_x': 1,'center_y': .22}
+        font_size:"80sp"
+    
+    MDLabel:
+        id: slide2
+        text:"."
+        color: rgba(233,237,240,255)
+        pos_hint: {'center_x': 1.05,'center_y': .22}
+        font_size:"80sp"
+
+            
+
+        
+

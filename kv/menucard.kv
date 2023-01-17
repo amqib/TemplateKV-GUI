@@ -1,0 +1,115 @@
+#:kivy 2.1.0
+
+#: import NoTransition kivy.uix.screenmanager.NoTransition
+
+
+<ElementCard@MDCard>:
+    radius: '10dp'
+    spacing:'10dp'
+    padding:'10dp'
+    image:''
+    text:''
+    sub_text:''
+    orientation:'vertical'
+    ripple_behavior: True
+    on_release:
+        app.root.transition = NoTransition()
+    Image:
+        source: root.image
+        halign: 'center'
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDLabel:
+            text: root.text
+            halign: 'center'
+        MDLabel:
+            text: root.sub_text
+            halign: 'center'
+        
+
+<Menucard>:
+    MDScreen:
+        name :'slide'
+        md_bg_color: [0,.5,.5,1]
+        MDBoxLayout:
+            orientation: 'vertical'
+            MDBoxLayout:
+                size_hint: 1, .2
+                orientation: 'horizontal'
+                padding:'10dp'
+                MDCard:
+                    radius:'10dp'
+                    padding:'10dp'
+                    line_color: 1,0,1,1
+                    
+                    MDLabel:
+                        text: "test slide"
+                        halign: 'center'
+                        pos_hint:{'center_y':0.5}
+                    MDSwitch:
+                        pos_hint: {'center_y':0.5}
+
+            MDGridLayout:
+                cols: 3
+                size_hint: 1, .2
+                padding: ['10dp','10dp','10dp','10dp']
+                spacing: '10dp'
+
+                ElementCard:
+                    text:'Carrot'
+                    sub_text: "A vegetable"
+                    image: 'Assets/Images/carrot.png'
+                    on_release:
+                        root.current = 'screen1'
+                ElementCard:
+                    text:'Cherries'
+                    sub_text: "A fruit"
+                    image: 'Assets/Images/cherries.png'
+                    on_release:
+                        root.manager.current= "cherries"
+
+                ElementCard:
+                    text:'lemon'
+                    sub_text: "A fruit"
+                    image: 'Assets/Images/lemon.png'
+                    on_release:
+                        root.current = 'screen1'
+
+                ElementCard:
+                    text:'mustard'
+                    sub_text: "A sauce"
+                    image: 'Assets/Images/mustard.png'
+                    on_release:
+                        root.current = 'screen1'
+
+                ElementCard:
+                    text:'Oat'
+                    sub_text: "A food"
+                    image: 'Assets/Images/oat.png'
+                    on_release:
+                        root.current = 'screen1'
+
+                ElementCard:
+                    text:'Raspberry'
+                    sub_text: "A fruit"
+                    image: 'Assets/Images/raspberry.png'
+                    on_release:
+                        root.current = 'screen1'
+
+                
+            MDBoxLayout:
+                size_hint: 1, .2
+                orientation: 'horizontal'
+                padding:'10dp'
+                MDCard:
+                    radius:'10dp'
+                    padding:'10dp'
+                    line_color: 1,0,1,1
+                    
+                    MDLabel:
+                        text: "test slide"
+                        halign: 'center'
+                        pos_hint:{'center_y':0.5}
+                    MDFillRoundFlatButton:
+                        text: "Push Me"
+                        pos_hint: {'center_y':0.5}

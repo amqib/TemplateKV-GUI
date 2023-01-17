@@ -1,0 +1,57 @@
+#:kivy 2.1.0
+
+<DescBox>:
+    orientation: "vertical"
+    adaptive_height: True
+    spacing:"8dp"
+    padding:"24dp","36dp",0, 0
+    pos_hint: {'center_x': 1}
+
+    MDLabel:
+        text: "Pancakes"
+        color: "brown"
+        adaptive_height: True
+        font_style:"H5"
+
+    MDLabel:
+        text: 
+            "Lorem ipsum dolor sit amet," \
+            " consectetur adipiscing elit." \
+            " sed do eiusmod tempor incididunt" \
+            " ut labore et dolore magna aliqua."\
+            " Ut enim ad minim veniam, quis nostrud"\
+            " exercitation ullamco laboris nisi ut aliquip "\
+            " ex ea commodo consequat."
+        color: "brown"
+        adaptive_size: True
+        text_size: root.width / 2, None
+        font_style: "Caption"
+
+    MDRaisedButton:
+        text: "Buy"
+        md_bg_color: "white"
+        theme_text_color: "Custom"
+        text_color:"black"
+        
+
+<ScaleCard>:
+
+    ScaleImage:
+        id: image
+        mipmap: True
+        source: "Assets/Images/pancakes.png"
+        size_hint: None, None
+        size: root.width - dp(20), root.height - dp(20)
+        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+
+<Cardtwo>:
+    MDFloatLayout:
+        md_bg_color: [0,.8,1,1]
+    ScaleCard:
+        md_bg_color:[1,243/255,224/255,1]
+        size_hint: None, None
+        size: "200dp", "200dp"
+        radius: [dp(100),]
+        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+
+
